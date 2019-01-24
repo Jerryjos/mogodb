@@ -4,6 +4,7 @@ var bodyParser=require('body-parser');
 var {mongoose}=require('./db/mongoose');
 var {todo}=require('./models/todo');
 var {user}=require('./models/user');
+const port=process.env.PORT || 3000;
 var app=express();
 app.use(bodyParser.json());
 app.post('/todos',(req,res)=>{
@@ -37,7 +38,7 @@ app.get('/todos/:id',(req,res)=>{
    res.status(404).send();});
 
 });
-app.listen(3000,()=>{
-  console.log('started on port 3000');
+app.listen(port,()=>{
+  console.log(`started on port ${port}`);
 });
 module.exports={app};
