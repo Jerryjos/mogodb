@@ -12,6 +12,7 @@ var mongoose=require('mongoose');
   },
   completedAt:{
     type:Number,
+    require:true,
     default:null
   }
 
